@@ -78,6 +78,7 @@ namespace CabInvioceGenerater
                 }
             }
             return Math.Max(totalFare, MINIMUM_FARE);
+
         }
     }
 }

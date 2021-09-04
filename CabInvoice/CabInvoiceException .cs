@@ -2,24 +2,23 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CabInvioceGenerater
+namespace CadInvoiceGenerator
 {
     public class CabInvoiceException : Exception
     {
-        /// <summary>
-        /// Enum For Exception type.
-        /// </summary>
         public enum ExceptionType
         {
             INVALID_RIDE_TYPE,
-            INVALID_DISTANCE,
+            INVLID_DISTANCE,
             INVALID_TIME,
-            NULL_RIDES,
-            INVALID_USER_ID
+            INVALID_RIDES,
+            INVALID_USER_ID,
+            NULL_RIDES
         }
         ExceptionType type;
+
         /// <summary>
-        /// Parameter Constructor For Setting Exception type And Throwing Exception.
+        /// Parameter  Constructor for Setting Exception Type and Throwing Exception
         /// </summary>
         /// <param name="type"></param>
         /// <param name="message"></param>

@@ -2,24 +2,19 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CabInvioceGenerater
+namespace CadInvoiceGenerator
 {
     public class RideRepository
     {
-        //Dictionary to Store UserId and Rides int List.
         Dictionary<string, List<Ride>> userRides = null;
-        /// <summary>
-        /// Constructor to Create Dictionary.
-        /// </summary>
+
+        //Constructor to create Dictionary
         public RideRepository()
         {
             this.userRides = new Dictionary<string, List<Ride>>();
         }
-        /// <summary>
-        /// Function to Add Ride List to Specified UserId.
-        /// </summary>
-        /// <param name="userId"></param>
-        /// <param name="rides"></param>
+
+        //Function to add rides list to specify userId
         public void AddRide(string userId, Ride[] rides)
         {
             bool rideList = this.userRides.ContainsKey(userId);
@@ -34,14 +29,11 @@ namespace CabInvioceGenerater
             }
             catch (CabInvoiceException)
             {
-                throw new CabInvoiceException(CabInvoiceException.ExceptionType.NULL_RIDES, "Rides Are Null");
+                throw new CabInvoiceException(CabInvoiceException.ExceptionType.NULL_RIDES, "Rides are Null");
             }
         }
-        /// <summary>
-        /// Function To Get Rides List As an Array for specified UserId. 
-        /// </summary>
-        /// <param name="userId"></param>
-        /// <returns></returns>
+
+        //Function to get Rides List as an array for specified UserID
         public Ride[] GetRides(string userId)
         {
             try
@@ -50,7 +42,8 @@ namespace CabInvioceGenerater
             }
             catch (Exception)
             {
-                throw new CabInvoiceException(CabInvoiceException.ExceptionType.INVALID_USER_ID, "Invalid UserID");
+
+                throw new CabInvoiceException(CabInvoiceException.ExceptionType.INVALID_USER_ID, "Invalid UserId");
             }
         }
     }
