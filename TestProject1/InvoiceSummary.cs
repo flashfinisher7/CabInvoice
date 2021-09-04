@@ -2,31 +2,31 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CabInvioceGenerater
+namespace CadInvoiceGenerator
 {
     public class InvoiceSummary
     {
-        // Variables.
         private int numberOfRides;
         private double totalFare;
         private double averageFare;
-        /// <summary>
-        /// Parameter Constructor For Setting Data.
-        /// </summary>
-        /// <param name="numberOfRides"></param>
-        /// <param name="totalFare"></param>
+
+        //Parameterized Constructor for setting Data
         public InvoiceSummary(int numberOfRides, double totalFare)
         {
-            //Setting Data.
             this.numberOfRides = numberOfRides;
             this.totalFare = totalFare;
             this.averageFare = this.totalFare / this.numberOfRides;
         }
-        /// <summary>
-        /// Overriding Equals Method.
-        /// </summary>
-        /// <param name="obj"></param>
-        /// <returns></returns>
+
+        //Parameterized Constructor for setting Data
+        public InvoiceSummary(int numberOfRides, double totalFare, double averageFare)
+        {
+            this.numberOfRides = numberOfRides;
+            this.totalFare = totalFare;
+            this.averageFare = this.totalFare / this.numberOfRides;
+        }
+
+        //OverRiding Equals Method
         public override bool Equals(object obj)
         {
             if (obj == null) return false;
@@ -35,10 +35,8 @@ namespace CabInvioceGenerater
             InvoiceSummary inputedObject = (InvoiceSummary)obj;
             return this.numberOfRides == inputedObject.numberOfRides && this.totalFare == inputedObject.totalFare && this.averageFare == inputedObject.averageFare;
         }
-        /// <summary>
-        /// Overriding GetHashCode Method.
-        /// </summary>
-        /// <returns></returns>
+
+        //Over Riding GetHashCode Method
         public override int GetHashCode()
         {
             return this.numberOfRides.GetHashCode() ^ this.totalFare.GetHashCode() ^ this.averageFare.GetHashCode();
